@@ -2,6 +2,9 @@ import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import "./App.css";
+import Image from "./Image";
+import Video from "./Video";
+import Info from "./Info";
 
 function App() {
   const [nasaData, setNasaData] = useState({});
@@ -16,24 +19,12 @@ function App() {
 
   return (
     <div className="App">
-      <div className="nasa-img">
-        <h1>{nasaData.title}</h1>
-        <img src={nasaData.hdurl} alt="Günün fotoğrafı" />
-      </div>
-      <div className="img-info">
-        {" "}
-        <h3>{nasaData.date}</h3>
-        <h4>{nasaData.copyright}</h4>
-        <p>
-          <span role="img" aria-label="go!">
-            🚀🚀🚀🚀🚀
-            <br></br>
-            <br></br>
-          </span>
-
-          {nasaData.explanation}
-        </p>
-      </div>
+      {nasaData["media_type"] === "image" ? (
+        <Image imgProp={nasaData} />
+      ) : (
+        <Video videoProp={nasaData} />
+      )}
+      <Info infoProp={nasaData} />
     </div>
   );
 }
