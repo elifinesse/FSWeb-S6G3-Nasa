@@ -5,6 +5,7 @@ import "./App.css";
 import Image from "./Image";
 import Video from "./Video";
 import Info from "./Info";
+import Calendar from "./Calendar";
 
 function App() {
   const [nasaData, setNasaData] = useState({});
@@ -19,6 +20,7 @@ function App() {
 
   return (
     <div className="App">
+      <Calendar />
       {nasaData["media_type"] === "image" ? (
         <Image imgProp={nasaData} />
       ) : (

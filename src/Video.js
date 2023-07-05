@@ -7,9 +7,9 @@ function Video(props) {
       src={videoProp.url}
       width="640"
       height="360"
-      frameborder="0"
+      frameBorder="0"
       allow="autoplay; fullscreen; picture-in-picture"
-      allowfullscreen
+      allowFullScreen
     ></iframe>
   );
 }
