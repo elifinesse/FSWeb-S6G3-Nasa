@@ -16,19 +16,24 @@ function App() {
 
   return (
     <div className="App">
-      <h1>{nasaData.title}</h1>
-      <img src={nasaData.url} alt="Günün fotoğrafı" />
-      <h3>{nasaData.date}</h3>
-      <h4>{nasaData.copyright}</h4>
-      <p>
-        <span role="img" aria-label="go!">
-          🚀🚀🚀🚀🚀
-          <br></br>
-          <br></br>
-        </span>
+      <div className="nasa-img">
+        <h1>{nasaData.title}</h1>
+        <img src={nasaData.hdurl} alt="Günün fotoğrafı" />
+      </div>
+      <div className="img-info">
+        {" "}
+        <h3>{nasaData.date}</h3>
+        <h4>{nasaData.copyright}</h4>
+        <p>
+          <span role="img" aria-label="go!">
+            🚀🚀🚀🚀🚀
+            <br></br>
+            <br></br>
+          </span>
 
-        {nasaData.explanation}
-      </p>
+          {nasaData.explanation}
+        </p>
+      </div>
     </div>
   );
 }
