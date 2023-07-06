@@ -1,17 +1,50 @@
 .App {
   text-align: center;
   margin: auto;
-  background-color: rgb(214, 224, 234);
 }
 h1 {
   margin: 0;
   padding: 20px;
-  color: rgb(25, 25, 109);
 }
 p {
   margin: 0;
 }
-
+header {
+  padding: 4rem 4rem;
+  display: flex;
+  justify-content: space-between;
+  height: 30px;
+}
+.page-title {
+  display: flex;
+  flex-direction: row;
+  text-align: left;
+  align-items: center;
+  gap: 2rem;
+}
+.content-list {
+  display: flex;
+  flex-direction: row;
+}
+.social-media {
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 2rem;
+}
+.social-media ul {
+  writing-mode: vertical-lr;
+}
+.content {
+  display: flex;
+  align-items: center;
+}
+.content img {
+  display: inline-block;
+  max-width: 600px;
+  object-fit: cover;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;

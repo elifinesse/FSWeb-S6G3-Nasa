@@ -6,6 +6,7 @@ import Image from "./Image";
 import Video from "./Video";
 import Info from "./Info";
 import Calendar from "./Calendar";
+import styled from "styled-components";
 
 function App() {
   const [nasaData, setNasaData] = useState({});
@@ -25,16 +26,42 @@ function App() {
       .catch((error) => console.log(error));
   }, [date]);
 
+  const Content = styled.body`
+    background-image: ${nasaData.url};
+  `;
+
   return (
-    <div className="App">
-      <Calendar dateProp={setDate} />
-      {nasaData["media_type"] === "image" ? (
-        <Image imgProp={nasaData} />
-      ) : (
-        <Video videoProp={nasaData} />
-      )}
-      <Info infoProp={nasaData} />
-    </div>
+    <Content>
+      <div className="App">
+        <header>
+          <div className="page-title">
+            <p>
+              ASTRONOMY <br></br>PICTURE <br></br>OF THE DAY
+            </p>
+            <p>----------</p>
+            <p>DISCOVER THE COSMOS</p>
+          </div>
+          <Calendar dateProp={setDate} />
+        </header>
+        <div className="content-list">
+          <div
+            className="content"
+            style={{
+              backgroundImage: `url(${nasaData.hdurl})`,
+              backgroundRepeat: "no-repeat",
+              backgroundSize: "cover",
+            }}
+          >
+            <Info infoProp={nasaData} />
+          </div>
+          <nav className="social-media">
+            <ul>Facebook</ul>
+            <ul>Twitter</ul>
+            <ul>Instagram</ul>
+          </nav>
+        </div>
+      </div>
+    </Content>
   );
 }
 
