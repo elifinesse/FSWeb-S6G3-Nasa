@@ -59,5 +59,12 @@ function App() {
     </div>
   );
 }
+/*img veya video kısmı
+{nasaData["media_type"] === "image" ? (
+    <Image imgProp={nasaData} />
+  ) : (
+    <Video videoProp={nasaData} />
+  )}
+*/
 
 export default App;
