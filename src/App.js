@@ -9,18 +9,25 @@ import Calendar from "./Calendar";
 
 function App() {
   const [nasaData, setNasaData] = useState({});
+  const [date, setDate] = useState(new Date().toISOString().slice(0, 10));
+
   useEffect(() => {
     axios
       .get(
-        "https://api.nasa.gov/planetary/apod?api_key=7La2DSBifCI4RGuacTKdaSMoTuiPVRIeAbmEFHE3"
+        "https://api.nasa.gov/planetary/apod?api_key=7La2DSBifCI4RGuacTKdaSMoTuiPVRIeAbmEFHE3",
+        {
+          params: {
+            date: date,
+          },
+        }
       )
       .then((response) => setNasaData(response.data))
       .catch((error) => console.log(error));
-  }, []);
+  }, [date]);
 
   return (
     <div className="App">
-      <Calendar />
+      <Calendar dateProp={setDate} />
       {nasaData["media_type"] === "image" ? (
         <Image imgProp={nasaData} />
       ) : (

@@ -1,13 +1,15 @@
 import React from "react";
 
-function Calendar() {
+function Calendar(props) {
+  const { dateProp } = props;
+
+  function dateHandler(event) {
+    dateProp(event.target.value);
+  }
+
   return (
     <div className="calendar-div">
-      <form action="/action_page.php">
-        <label for="date">Date</label>
-        <input type="date" id="date" name="date" />
-        <input type="submit" />
-      </form>
+      <input type="date" id="date" name="date" onChange={dateHandler} />
     </div>
   );
 }
