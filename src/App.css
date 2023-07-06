@@ -1,10 +1,16 @@
 .App {
   text-align: center;
   margin: auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
+
 h1 {
   margin: 0;
-  padding: 20px;
+  padding: 0px;
 }
 p {
   margin: 0;
@@ -14,6 +20,13 @@ header {
   display: flex;
   justify-content: space-between;
   height: 30px;
+}
+.header-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
 }
 .page-title {
   display: flex;
@@ -25,6 +38,7 @@ header {
 .content-list {
   display: flex;
   flex-direction: row;
+  flex-grow: 1;
 }
 .social-media {
   padding: 3rem;
@@ -44,6 +58,21 @@ header {
   display: inline-block;
   max-width: 600px;
   object-fit: cover;
+}
+.img-info {
+  text-align: left;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  padding: 3rem;
+  margin: 2rem;
+  gap: 1rem;
+}
+.img-info p {
+  font-size: 1.2rem;
+}
+h3 {
+  margin: 0;
 }
 .App-logo {
   height: 40vmin;

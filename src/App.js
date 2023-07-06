@@ -6,7 +6,6 @@ import Image from "./Image";
 import Video from "./Video";
 import Info from "./Info";
 import Calendar from "./Calendar";
-import styled from "styled-components";
 
 function App() {
   const [nasaData, setNasaData] = useState({});
@@ -26,13 +25,9 @@ function App() {
       .catch((error) => console.log(error));
   }, [date]);
 
-  const Content = styled.body`
-    background-image: ${nasaData.url};
-  `;
-
   return (
-    <Content>
-      <div className="App">
+    <div className="App">
+      <div className="header-content">
         <header>
           <div className="page-title">
             <p>
@@ -61,7 +56,7 @@ function App() {
           </nav>
         </div>
       </div>
-    </Content>
+    </div>
   );
 }
 

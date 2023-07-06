@@ -5,10 +5,9 @@ function Info(props) {
   return (
     <div className="img-info">
       <h1>{infoProp.title}</h1>
-
-      <p>{infoProp.copyright}</p>
+      <h3>Credit: {infoProp.copyright}</h3>
       <p>{infoProp.explanation}</p>
-      <h3>{infoProp.date}</h3>
+      <h3>Date: {infoProp.date}</h3>
     </div>
   );
 }
